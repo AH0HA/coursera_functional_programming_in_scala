@@ -1,0 +1,3 @@
+create eclipse project in sbt
+from eclipse import project
+the folder is where the build.sbt is
