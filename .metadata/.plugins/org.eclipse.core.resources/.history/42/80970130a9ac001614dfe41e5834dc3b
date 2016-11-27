@@ -1,5 +1,0 @@
-package example
-
-object Main extends App{
-  def main { println(Lists.max(List(1,3,2)))}
-}
