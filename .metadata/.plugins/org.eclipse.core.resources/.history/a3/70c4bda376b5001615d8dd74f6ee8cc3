@@ -314,10 +314,10 @@ object GoogleVsApple {
   lazy val appleTweets: TweetSet = TweetReader.allTweets.filter(p => apple.exists(s => p.text.contains(s)))
 
   // Q: from both sets, what is the tweet with highest #retweets?
-  lazy val trending: TweetList = googleTweets.union(appleTweets).descendingByRetweet     
+  lazy val TweetList: TweetList = googleTweets.union(appleTweets).descendingByRetweet     
   }
 
 object Main extends App {
   // Print the trending tweets
-  GoogleVsApple.trending foreach println
+  GoogleVsApple.TweetList foreach println
 }
