@@ -309,12 +309,9 @@ object GoogleVsApple {
    * sorted by the number of retweets.
    */
      //lazy val trending: TweetList = ???
-  //lazy val googleTweets: TweetSet = TweetReader.allTweets.filter(p => google.exists(s => p.text.contains(s)))
+  lazy val googleTweets: TweetSet = TweetReader.allTweets.filter(p => google.exists(s => p.text.contains(s)))
 
-  //lazy val appleTweets: TweetSet = TweetReader.allTweets.filter(p => apple.exists(s => p.text.contains(s)))
-  lazy val googleTweets: TweetSet = TweetReader.allTweets.filter(p => google.exists(s => p.text.contains("Check")))
-
-  lazy val appleTweets: TweetSet = TweetReader.allTweets.filter(p => apple.exists(s => p.text.contains("Check")))
+  lazy val appleTweets: TweetSet = TweetReader.allTweets.filter(p => apple.exists(s => p.text.contains(s)))
 
   // Q: from both sets, what is the tweet with highest #retweets?
   lazy val trending: TweetList = googleTweets.union(appleTweets).descendingByRetweet     
